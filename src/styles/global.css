@@ -67,7 +67,7 @@
 body {
 	background-color: theme("colors.blue.950");
 	color: theme("colors.blue.50");
-	font-size: theme("fontSize.xl");
+	font-size: theme("fontSize.lg");
 	line-height: 2;
 
 	@media (prefers-color-scheme: light) {
@@ -86,12 +86,13 @@ body {
 		font-family: theme("fontFamily.serif");
 		font-weight: black;
 		text-wrap: balance;
+		text-transform: capitalize;
 	}
 
 	h1 {
 		font-size: theme("fontSize.4xl");
 		line-height: 1.3;
-		color: theme("colors.blue.100");
+		color: theme("colors.peach");
 
 		@media (prefers-color-scheme: light) {
 			color: theme("colors.blue.500");
@@ -146,6 +147,14 @@ body {
 			line-height: 2;
 		}
 
+		:where(h1, h2, h3, h4, h5, h6) + :where(p, ul) {
+			margin-block-start: 0.5em;
+		}
+
+		strong {
+			font-family: theme("fontFamily.serif");
+		}
+
 		img {
 			border-radius: theme("borderRadius.xl");
 		}
@@ -156,14 +165,6 @@ body {
 
 			&:hover {
 				color: theme("colors.peach");
-			}
-
-			@media (prefers-color-scheme: light) {
-				color: theme("colors.blue.500");
-
-				&:hover {
-					color: theme("colors.blue.700");
-				}
 			}
 		}
 
@@ -192,12 +193,16 @@ body {
 			padding-block: 1.5em;
 			color: theme("colors.blue.300");
 			background-color: theme("colors.blue.900");
+
+			@media (prefers-color-scheme: light) {
+				color: theme("colors.blue.900");
+				background-color: theme("colors.beige.500");
+			}
 		}
 
 		code,
 		pre {
 			font-family: theme("fontFamily.mono");
-			font-size: theme("fontSize.sm");
 		}
 
 		:not(pre) > code {
@@ -205,6 +210,17 @@ body {
 			color: theme("colors.blue.200");
 			padding: 0.2em 0.4em;
 			border-radius: theme("borderRadius.DEFAULT");
+			font-size: 0.75em;
+
+			@media (prefers-color-scheme: light) {
+				background-color: theme("colors.beige.500");
+				color: theme("colors.blue.900");
+			}
+		}
+
+		pre {
+			padding: 1em;
+			border-radius: theme("borderRadius.xl");
 		}
 	}
 }
@@ -257,4 +273,10 @@ body {
 ::-moz-selection {
 	background-color: theme("colors.orange");
 	color: theme("colors.blue.950");
+}
+
+@layer utilities {
+	.foo {
+		background-color: blue;
+	}
 }

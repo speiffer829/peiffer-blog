@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {},
 		fontFamily: {
-			sans: ["Atkinson", "system-ui", "sans-serif"],
+			sans: ["-apple-system", "Atkinson", "System-ui", "sans-serif"],
 			serif: ["moranga", "serif"],
 			mono: ["Fira Code", "monospace"],
 		},
