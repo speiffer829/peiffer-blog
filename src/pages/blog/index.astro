@@ -14,20 +14,20 @@ const posts = (await getCollection('blog')).sort(
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title='Blog' description={SITE_DESCRIPTION} />
 	
 			
 	</head>
 	<body>
 		<Header />
-		<main class="wrapper">
+		<main class="wrapper py-10">
 			<section>
-				<ul>
+				<ul class="grid md:grid-cols-2 gap-8">
 					{
 						posts.map((post) => (
 							<li>
 								<a href={`/blog/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
+									<img width={720} height={360} src={post.data.heroImage} alt="" class="w-full" />
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
 										<FormattedDate date={post.data.pubDate} />
@@ -42,3 +42,13 @@ const posts = (await getCollection('blog')).sort(
 		<Footer />
 	</body>
 </html>
+
+<style>
+	ul > li:first-child{
+		grid-column: 1/-1;
+	}
+
+	img{
+		border-radius: theme('borderRadius.lg');
+	}
+</style>
