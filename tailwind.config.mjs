@@ -3,6 +3,24 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {},
+		fontFamily:{
+			sans: ['Atkinson', 'system-ui', 'sans-serif'],
+			serif: ['moranga', 'serif'],
+		},
+		colors:{
+			orange: '#FF6B35',
+			peach: '#F7C59F',
+			beige: '#EFEFD0',
+			blue: {
+				DEFAULT: '#1A659E',
+				50: '#e8f3fc',
+				100: '#d9ebf9',
+				200: '#bfdbf0',
+				500: '#1A659E',
+				700: '#004E89',
+				950: '#010f1a'
+			}
+		}
 	},
 	plugins: [],
 }
